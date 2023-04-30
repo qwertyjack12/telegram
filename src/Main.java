@@ -1,3 +1,4 @@
+import channel.Channel;
 import chat.Chat;
 import sticker.FreeSticker;
 import sticker.PremiumSticker;
@@ -10,6 +11,8 @@ public class Main {
         var pst2 = new PremiumSticker("pm", "p agrrrr", 152);
 
         var chat = new Chat<>("test");
+
+        var channel = new Channel("testName", "test description");
 
         System.out.println(st1.getName());
         System.out.println(st1.getMessage());
@@ -42,6 +45,14 @@ public class Main {
         System.out.println(chat.calculateCountFreeStickers());
         System.out.println(chat.calculateCountPremiumStickers());
         System.out.println(chat.calculateStickersPrice());
+
+        System.out.println(channel.getName());
+        System.out.println(channel.getChannelDescription());
+        System.out.println(channel.getChatsList());
+        channel.addChat(chat);
+        System.out.println(channel.getChatsList());
+        channel.removeChat(chat);
+        System.out.println(channel.getChatsList());
 
     }
 }
