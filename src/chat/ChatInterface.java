@@ -2,9 +2,9 @@ package chat;
 
 import sticker.Sticker;
 
-public interface ChatInterface<T extends Sticker> {
-    void addSticker(T sticker);
-    void removeSticker(T sticker);
+public interface ChatInterface {
+    void addSticker(Sticker sticker);
+    void removeSticker(Sticker sticker);
     int calculateStickersPrice();
     int calculateCountStickers();
     int calculateCountPremiumStickers();

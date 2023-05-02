@@ -1,6 +1,8 @@
 package sticker;
 
-public class PremiumSticker extends Sticker{
+import java.io.Serializable;
+
+public class PremiumSticker extends Sticker implements Serializable {
     public PremiumSticker(String name, String message, int price) {
         super(name, message);
         this.price = price;

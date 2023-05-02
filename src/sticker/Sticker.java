@@ -1,6 +1,8 @@
 package sticker;
 
-public abstract class Sticker {
+import java.io.Serializable;
+
+public abstract class Sticker implements Serializable {
     protected String name;
     protected String message;
     protected int price;

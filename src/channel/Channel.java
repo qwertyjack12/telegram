@@ -2,14 +2,15 @@ package channel;
 
 import chat.Chat;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Channel implements ChannelInterface {
+public class Channel implements ChannelInterface, Serializable {
 
     // Переменные экземпляра класса
     protected String name; // имя канала
     protected String channelDescription; // описание канала
-    protected ArrayList<Chat<?>> chatsList; // список чатов в канале
+    protected ArrayList<Chat> chatsList; // список чатов в канале
 
     /**
 
@@ -59,7 +60,7 @@ public class Channel implements ChannelInterface {
      Возвращает список чатов в канале.
      @return список чатов в канале
      */
-    public ArrayList<Chat<?>> getChatsList() {
+    public ArrayList<Chat> getChatsList() {
         return chatsList;
     }
     /**
@@ -68,7 +69,7 @@ public class Channel implements ChannelInterface {
      @param chat чат для добавления
      */
     @Override
-    public void addChat(Chat<?> chat) {
+    public void addChat(Chat chat) {
         this.chatsList.add(chat);
     }
     /**
@@ -77,7 +78,7 @@ public class Channel implements ChannelInterface {
      @param chat чат для удаления
      */
     @Override
-    public void removeChat(Chat<?> chat) {
+    public void removeChat(Chat chat) {
         this.chatsList.remove(chat);
     }
     /**

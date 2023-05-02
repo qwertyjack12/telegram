@@ -1,6 +1,8 @@
 package sticker;
 
-public class FreeSticker extends Sticker{
+import java.io.Serializable;
+
+public class FreeSticker extends Sticker implements Serializable {
     public FreeSticker(String name, String message) {
         super(name, message);
         this.price = 0;

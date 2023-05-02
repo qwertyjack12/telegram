@@ -2,15 +2,16 @@ package chat;
 
 import sticker.Sticker;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Chat<T extends Sticker> implements ChatInterface<T> {
+public class Chat implements ChatInterface, Serializable {
     protected String name;
     protected int premiumStatus;
     protected int countPeople;
     protected int premiumCountPeople;
     protected int freeCountPeople;
-    protected ArrayList<T> stickersList;
+    protected ArrayList<Sticker> stickersList;
 
     public Chat(String name) {
         this.name = name;
@@ -66,17 +67,17 @@ public class Chat<T extends Sticker> implements ChatInterface<T> {
         this.premiumStatus = premiumStatus;
     }
 
-    public ArrayList<T> getStickersList() {
+    public ArrayList<Sticker> getStickersList() {
         return stickersList;
     }
 
     @Override
-    public void addSticker(T sticker) {
+    public void addSticker(Sticker sticker) {
         this.stickersList.add(sticker);
     }
 
     @Override
-    public void removeSticker(T sticker) {
+    public void removeSticker(Sticker sticker) {
         this.stickersList.remove(sticker);
     }
 
@@ -116,8 +117,8 @@ public class Chat<T extends Sticker> implements ChatInterface<T> {
     @Override
     public String toString() {
         return switch (this.premiumStatus){
-            case 1 -> "Premium chat";
-            default -> "Default chat";
+            case 1 -> name + ": premium chat";
+            default -> name + ": free chat";
         };
     }
 }
